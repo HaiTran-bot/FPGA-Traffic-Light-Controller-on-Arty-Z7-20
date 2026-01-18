@@ -18,68 +18,6 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-//module fsm_traffic (
-//    input wire clk_1hz,      // 1 Hz clock
-//    input wire btn_press,    // Mode toggle press flag
-//    input wire [1:0] sw,     // Switches
-//    output reg [7:0] remaining_sec,
-//    output reg led_r,
-//    output reg led_g,
-//    output reg led_b
-//);
-
-//    // State definitions
-//    localparam [1:0] GREEN = 2'b00, YELLOW = 2'b01, RED = 2'b10;
-//    // Durations
-//    localparam [7:0] RED_DUR = 8'd5, GREEN_DUR = 8'd3, YEL_DUR = 8'd2;
-
-//    reg [1:0] state = RED;
-//    reg mode = 0; // 0: normal, 1: switch control
-    
-//    // Khởi tạo giá trị ban đầu cho remaining_sec
-//    initial remaining_sec = RED_DUR; 
-
-//    always @(posedge clk_1hz or posedge btn_press) begin
-//        if (btn_press) begin
-//            mode <= ~mode; 
-//            if (mode == 1) begin 
-//                state <= RED;
-//                remaining_sec <= RED_DUR;
-//            end else begin
-//                remaining_sec <= 0;
-//                if (sw[0]) state <= YELLOW;
-//                else if (sw[1]) state <= GREEN;
-//                else state <= RED;
-//            end
-//        end else if (mode == 0) begin // Normal mode
-//            if (remaining_sec == 0) begin
-//                case (state)
-//                    GREEN: begin state <= YELLOW; remaining_sec <= YEL_DUR; end
-//                    YELLOW: begin state <= RED; remaining_sec <= RED_DUR; end
-//                    RED: begin state <= GREEN; remaining_sec <= GREEN_DUR; end
-//                    default: state <= RED;
-//                endcase
-//            end else begin
-//                remaining_sec <= remaining_sec - 1;
-//            end
-//        end else if (mode == 1) begin // Switch mode
-//            if (sw[0]) begin state <= YELLOW; remaining_sec <= 0; end
-//            else if (sw[1]) begin state <= GREEN; remaining_sec <= 0; end
-//            else begin state <= RED; remaining_sec <= 0; end
-//        end
-//    end
-
-//    always @(*) begin
-//        led_r = 0; led_g = 0; led_b = 0;
-//        case (state)
-//            GREEN: led_g = 1;
-//            YELLOW: led_b = 1;
-//            RED: led_r = 1;
-//        endcase
-//    end
-//endmodule
-
-
 module fsm_traffic (
     input wire clk,         
     input wire clk_1hz,      
