@@ -1,10 +1,7 @@
 # FPGA Traffic Light Controller (Arty Z7-20)
 
-![Board](https://img.shields.io/badge/Board-Digilent_Arty_Z7--20-red)
-![Language](https://img.shields.io/badge/Language-Verilog%2FSystemVerilog-blue)
-![Tool](https://img.shields.io/badge/Tool-Vivado-green)
 
-## 📌 Overview
+##  Overview
 
 This project implements a **Traffic Light Control System** on the **Digilent Arty Z7-20** FPGA board. The system features a Finite State Machine (FSM) that manages traffic signals in two distinct modes: **Automatic (Timer-based)** and **Manual (Switch-based)**.
 
@@ -12,7 +9,7 @@ The design utilizes the Arty Z7's onboard 125 MHz clock, RGB LEDs for traffic si
 
 ---
 
-## 🚀 Key Features
+##  Key Features
 
 * **Hardware Platform:** Designed specifically for the Xilinx XC7Z020 (Arty Z7-20).
 * **Dual Operation Modes:**
@@ -24,7 +21,7 @@ The design utilizes the Arty Z7's onboard 125 MHz clock, RGB LEDs for traffic si
 
 ---
 
-## 🏗️ Architecture Design
+##  Architecture Design
 
 The system is modularized into four main components:
 
@@ -51,7 +48,7 @@ The core logic controls the traffic lights based on the current mode:
 
 ---
 
-## 🎮 Controls & IO Mapping
+##  Controls & IO Mapping
 
 | Signal | Board Component | Description |
 | :--- | :--- | :--- |
@@ -64,7 +61,7 @@ The core logic controls the traffic lights based on the current mode:
 | `seg_tens/units`| Pmod / External Pins | Output to 7-Segment Display |
 
 ---
-## 📈 Simulation Results
+##  Simulation Results
 The design was verified using Vivado. The waveform demonstrates the system switching between modes:
 
 Manual Mode: Switches control the state directly.
@@ -72,7 +69,7 @@ Manual Mode: Switches control the state directly.
 Auto Mode: The timer decrements, and states transition automatically (Red -> Green -> Yellow).
 
 
-## 🛠️ How to Run on Arty Z7-20
+##  How to Run on Arty Z7-20
 Create Project: Open Vivado and create a new project targeting the Arty Z7-20 board.
 
 Add Sources: Import all .v files from the src folder.
